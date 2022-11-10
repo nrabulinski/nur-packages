@@ -1,2 +1,2 @@
 final: prev:
-  import ./default.nix { pkgs = prev; }
+import ./default.nix {pkgs = prev;}

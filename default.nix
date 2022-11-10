@@ -1,5 +1,3 @@
-{ pkgs ? import <nixpkgs> {} }:
-
-{
-  playcover = pkgs.callPackage ./pkgs/playcover.nix { };
+{pkgs ? import <nixpkgs> {}}: {
+  playcover = pkgs.callPackage ./pkgs/playcover.nix {};
 }

@@ -2,26 +2,25 @@
   lib,
   undmg,
   fetchurl,
-  stdenvNoCC
+  stdenvNoCC,
 }:
-
 stdenvNoCC.mkDerivation rec {
   pname = "playcover";
   version = "2.0.0-beta.1";
-  
+
   src = fetchurl {
     url = "https://github.com/PlayCover/PlayCover/releases/download/${version}/PlayCover_${version}.dmg";
     sha256 = lib.fakeSha256;
   };
-  
-  nativeBuildInputs = [ undmg ];
-  
+
+  nativeBuildInputs = [undmg];
+
   sourceRoot = ".";
   installPhase = ''
     mkdir -p $out/Applications
     cp -r *.app $out/Applications
   '';
-  
+
   meta = with lib; {
     description = "Run iOS apps and games on Apple Silicon Macs with mouse, keyboard and controller support.";
     longDescription = ''
@@ -39,8 +38,8 @@ stdenvNoCC.mkDerivation rec {
     changelog = "https://github.com/PlayCover/PlayCover/releases/tag/${version}";
     mainProgram = "PlayCover";
     license = licenses.gpl3;
-    platforms = [ "aarch64-darwin" ];
-    sourceProvenance = with sourceTypes; [ binaryNativeCode ];
+    platforms = ["aarch64-darwin"];
+    sourceProvenance = with sourceTypes; [binaryNativeCode];
     maintainers = import ../maintainers.nix;
   };
 }

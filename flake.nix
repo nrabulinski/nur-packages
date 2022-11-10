@@ -17,9 +17,12 @@
       ];
 
       perSystem = {pkgs, ...}: {
-        packages = import ./default.nix { inherit pkgs; };
-        overlay = import ./overlay.nix;
+        packages = import ./default.nix {inherit pkgs;};
         formatter = pkgs.alejandra;
+      };
+
+      flake = {
+        overlay = import ./overlay.nix;
       };
     };
 }
