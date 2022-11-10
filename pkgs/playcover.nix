@@ -10,7 +10,7 @@ stdenvNoCC.mkDerivation rec {
 
   src = fetchurl {
     url = "https://github.com/PlayCover/PlayCover/releases/download/${version}/PlayCover_${version}.dmg";
-    sha256 = lib.fakeSha256;
+    sha256 = "sha256-zUrCpTFAwANO61DmKzNfFyljnL6vQ/cijJdtTZruerg=";
   };
 
   nativeBuildInputs = [undmg];
