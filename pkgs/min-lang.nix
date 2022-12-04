@@ -77,7 +77,10 @@ in
 
     meta = with lib; {
       license = licenses.mit;
-      platforms = platforms.x86_64;
+      platforms = with platforms; let
+        archs = concatLists [ x86_64 aarch64 ];
+        os = concatLists [ linux darwin ];
+      in intersectLists archs os;
       maintainers = import ../maintainers.nix;
     };
   } ''
