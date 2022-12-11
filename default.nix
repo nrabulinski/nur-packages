@@ -5,4 +5,5 @@
   zig_0_10 = pkgs.callPackage ./pkgs/zig_0_10.nix {};
   swiftcord = pkgs.callPackage ./pkgs/swiftcord.nix {};
   min-lang = pkgs.callPackage ./pkgs/min-lang.nix {};
+  klong = pkgs.callPackage ./pkgs/klong.nix {};
 }
