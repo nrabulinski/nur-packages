@@ -6,11 +6,11 @@
 }:
 stdenvNoCC.mkDerivation rec {
   pname = "playcover";
-  version = "2.0.0-beta.1";
+  version = "2.0.1";
 
   src = fetchurl {
     url = "https://github.com/PlayCover/PlayCover/releases/download/${version}/PlayCover_${version}.dmg";
-    sha256 = "sha256-zUrCpTFAwANO61DmKzNfFyljnL6vQ/cijJdtTZruerg=";
+    sha256 = "sha256-NuMIwnElMRyIX/ksoBo4mB0yGEiTNZzliKAoYL4OXrA=";
   };
 
   nativeBuildInputs = [undmg];

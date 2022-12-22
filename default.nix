@@ -6,4 +6,5 @@
   swiftcord = pkgs.callPackage ./pkgs/swiftcord.nix {};
   min-lang = pkgs.callPackage ./pkgs/min-lang.nix {};
   klong = pkgs.callPackage ./pkgs/klong.nix {};
+  yabai-bin = pkgs.callPackage ./pkgs/yabai-bin.nix {};
 }
