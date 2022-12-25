@@ -7,4 +7,5 @@
   min-lang = pkgs.callPackage ./pkgs/min-lang.nix {};
   klong = pkgs.callPackage ./pkgs/klong.nix {};
   yabai-bin = pkgs.callPackage ./pkgs/yabai-bin.nix {};
+  qutebrowser-bin = pkgs.callPackage ./pkgs/qutebrowser-bin.nix {};
 }
