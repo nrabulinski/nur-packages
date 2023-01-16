@@ -6,11 +6,11 @@
 }:
 stdenvNoCC.mkDerivation rec {
   pname = "lunar";
-  version = "5.8.0";
+  version = "5.9.3";
 
   src = fetchurl {
     url = "https://github.com/alin23/Lunar/releases/download/v${version}/Lunar-${version}.dmg";
-    sha256 = "sha256-gdjYoJpxsc1R/bMHwMifE3t4k88zWdC7Sm0f2nHqdl4=";
+    sha256 = "sha256-53bQXEqSghJN23UnkZhKWQZ4JApglZv3PIfFA0u2dcc=";
   };
 
   nativeBuildInputs = [undmg];
