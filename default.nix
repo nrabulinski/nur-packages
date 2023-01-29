@@ -10,4 +10,5 @@
   qutebrowser-bin = pkgs.callPackage ./pkgs/qutebrowser-bin.nix {};
   cargo-leptos = pkgs.callPackage ./pkgs/cargo-leptos.nix {};
   taplo = pkgs.callPackage ./pkgs/taplo.nix {};
+  sensors = pkgs.callPackage ./pkgs/sensors.nix {};
 }
