@@ -13,7 +13,7 @@ stdenvNoCC.mkDerivation rec {
     sha256 = "sha256-AJBBNdj8/oOiUf6BE0zUcJTmUz4dPBqBr1GKt+mDlh0=";
   };
 
-  nativeBuildInputs = [ unzip ];
+  nativeBuildInputs = [unzip];
   sourceRoot = ".";
   unpackCmd = "unzip -o $curSrc";
   installPhase = ''
@@ -26,6 +26,6 @@ stdenvNoCC.mkDerivation rec {
     mainProgram = "Sensors";
     platforms = platforms.darwin;
     sourceProvenance = with sourceTypes; [binaryNativeCode];
-    maintainers = import ../maintainers.nix; 
+    maintainers = import ../maintainers.nix;
   };
 }

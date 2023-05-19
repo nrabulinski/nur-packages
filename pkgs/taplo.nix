@@ -1,11 +1,11 @@
-{ lib
-, rustPlatform,
-  fetchFromGitHub
-, stdenv
-, darwin
-, withLsp ? true
+{
+  lib,
+  rustPlatform,
+  fetchFromGitHub,
+  stdenv,
+  darwin,
+  withLsp ? true,
 }:
-
 rustPlatform.buildRustPackage rec {
   pname = "taplo";
   version = "0.8.0";

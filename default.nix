@@ -11,4 +11,5 @@
   cargo-leptos = pkgs.callPackage ./pkgs/cargo-leptos.nix {};
   taplo = pkgs.callPackage ./pkgs/taplo.nix {};
   sensors = pkgs.callPackage ./pkgs/sensors.nix {};
+  intel-one-mono = pkgs.callPackage ./pkgs/intel-one-mono.nix {};
 }
