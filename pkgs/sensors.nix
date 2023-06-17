@@ -6,7 +6,7 @@
 }:
 stdenvNoCC.mkDerivation rec {
   pname = "sensors";
-  version = "1.0.1";
+  version = "1.2.0";
 
   src = fetchurl {
     url = "https://github.com/macmade/Sensors/releases/download/1.0.1/Sensors.app.zip";
@@ -18,7 +18,6 @@ stdenvNoCC.mkDerivation rec {
   unpackCmd = "unzip -o $curSrc";
   installPhase = ''
     mkdir -p $out/Applications
-    # ls -lah > $out/file-list
     cp -r *.app $out/Applications
   '';
 

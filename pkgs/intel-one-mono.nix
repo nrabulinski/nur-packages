@@ -6,7 +6,7 @@
 }:
 stdenvNoCC.mkDerivation rec {
   pname = "intel-one-mono";
-  version = "1.2.0";
+  version = "1.2.1";
 
   nativeBuildInputs = [unzip];
 

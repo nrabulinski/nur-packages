@@ -6,11 +6,11 @@
 }:
 stdenvNoCC.mkDerivation rec {
   pname = "lunar";
-  version = "5.9.3";
+  version = "6.1.3";
 
   src = fetchurl {
     url = "https://github.com/alin23/Lunar/releases/download/v${version}/Lunar-${version}.dmg";
-    sha256 = "sha256-53bQXEqSghJN23UnkZhKWQZ4JApglZv3PIfFA0u2dcc=";
+    sha256 = "sha256-ysQIlnLVYs5f1yq2tbmrVdVEd5wTYhUDmbe8OSqa/wI=";
   };
 
   nativeBuildInputs = [undmg];
@@ -32,7 +32,7 @@ stdenvNoCC.mkDerivation rec {
     '';
     homepage = "https://lunar.fyi";
     changelog = "https://github.com/alin23/Lunar/releases/tag/v${version}";
-    mainProgram = "PlayCover";
+    mainProgram = "Lunar";
     license = licenses.mit;
     platforms = platforms.darwin;
     sourceProvenance = with sourceTypes; [binaryNativeCode];

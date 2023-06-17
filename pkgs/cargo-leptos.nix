@@ -14,19 +14,26 @@
     Security
     CoreServices
   ];
+  vPrefix = version:
+    lib.optionalString (lib.versionAtLeast version "0.1.11") "v";
 in
   rustPlatform.buildRustPackage rec {
     pname = "cargo-leptos";
-    version = "0.1.1";
+    version = "0.1.11";
 
     src = fetchFromGitHub {
       owner = "leptos-rs";
       repo = pname;
-      rev = version;
-      hash = "sha256-thELkSFC45GveOZOat2PQrTM7Fx5phyhIpgjWwe6r40=";
+      rev = "${vPrefix version}${version}";
+      hash = "sha256-hZevu2lwyYFenABu1uV7/mZc7SXfLzR6Pdmc3zHJ2vw=";
     };
 
-    cargoSha256 = "sha256-AzTJnZ+6Mhs6KhnaQk8TRj+0z0Ev8tP+C2r7B/GVELA=";
+    cargoLock = {
+      lockFile = "${src}/Cargo.lock";
+      outputHashes = {
+        "leptos_hot_reload-0.3.0" = "sha256-Pl3nZaz5r5ZFagytLMczIyXEWQ6AFLb3+TrI/6Sevig=";
+      };
+    };
 
     doCheck = false;
 

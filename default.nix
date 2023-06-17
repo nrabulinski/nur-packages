@@ -12,4 +12,5 @@
   taplo = pkgs.callPackage ./pkgs/taplo.nix {};
   sensors = pkgs.callPackage ./pkgs/sensors.nix {};
   intel-one-mono = pkgs.callPackage ./pkgs/intel-one-mono.nix {};
+  conduit-latest = pkgs.callPackage ./pkgs/conduit-latest.nix {};
 }

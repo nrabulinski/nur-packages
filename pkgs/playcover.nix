@@ -1,19 +1,35 @@
 {
   lib,
-  undmg,
   fetchurl,
   stdenvNoCC,
 }:
 stdenvNoCC.mkDerivation rec {
   pname = "playcover";
-  version = "2.0.2";
+  version = "3.0.0-beta.1";
 
   src = fetchurl {
     url = "https://github.com/PlayCover/PlayCover/releases/download/${version}/PlayCover_${version}.dmg";
-    sha256 = "sha256-13pvzvPK5JfZMhIJc0TdCpxTVCk/ozTcpotSr7WjwqA=";
+    sha256 = "sha256-D3xA0mVPmnDlKQH8TekQcZCQvY/7e5/dHKofDy3Idig=";
   };
 
-  nativeBuildInputs = [undmg];
+  # PlayCover now uses APFS dmg which undmg does not support
+  unpackCmd = ''
+    if ! [[ "$curSrc" =~ \.dmg$ ]]; then return 1; fi
+
+    mnt=$(mktemp -d -t dmg-XXXXXXXXXX)
+
+    function finish {
+      /usr/bin/hdiutil detach $mnt -force
+      rm -rf $mnt
+    }
+    trap finish EXIT
+    /usr/bin/hdiutil attach -nobrowse -readonly $src -mountpoint $mnt
+    ls -lah $mnt/
+    ls -lah $mnt/*.app/
+    cp -R $mnt/*.app ./
+    trap - EXIT
+    finish
+  '';
 
   sourceRoot = ".";
   installPhase = ''
