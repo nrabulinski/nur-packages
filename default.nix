@@ -13,4 +13,5 @@
   sensors = pkgs.callPackage ./pkgs/sensors.nix {};
   intel-one-mono = pkgs.callPackage ./pkgs/intel-one-mono.nix {};
   conduit-latest = pkgs.callPackage ./pkgs/conduit-latest.nix {};
+  operator-mono-nf = pkgs.callPackage ./pkgs/operator-mono-nf.nix {};
 }
