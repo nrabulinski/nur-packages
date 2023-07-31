@@ -18,8 +18,8 @@ in
     src = fetchFromGitLab {
       owner = "famedly";
       repo = "conduit";
-      rev = "def079267d3a4255df2c3dd38ed317ca65df5416";
-      sha256 = "sha256-ufDLrsDUAQNUsWLGVAFsPA2W/u8pmyMVyed5xUI11FQ=";
+      rev = "10da9485a5052695c89b5ea832f643d617fbc664";
+      hash = "sha256-/WBK95oDFQ9L0jy5XeAWWo+HZOI7nK7mdZdjWQpv3gc=";
     };
 
     cargoLock = {
@@ -27,7 +27,7 @@ in
       outputHashes = {
         "heed-0.10.6" = "sha256-rm02pJ6wGYN4SsAbp85jBVHDQ5ITjZZd+79EC2ubRsY=";
         "reqwest-0.11.9" = "sha256-wH/q7REnkz30ENBIK5Rlxnc1F6vOyuEANMHFmiVPaGw=";
-        "ruma-0.8.2" = "sha256-tgqUqiN6LNUyz5I6797J0YFsiFyYWfexa7n2jwUoHWA=";
+        "ruma-0.8.2" = "sha256-+CjVDLopvkyunZ7jhkDLgfyGkUpl9069h0xDhmLoijQ=";
       };
     };
 

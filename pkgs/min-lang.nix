@@ -6,7 +6,7 @@
   runCommandLocal,
   stdenvNoCC,
 }: let
-  version = "0.37.0";
+  version = "0.39.0";
   mergeDirs = {
     name,
     dirs,
@@ -32,17 +32,17 @@
     owner = "h3rald";
     repo = "min";
     rev = "v${version}";
-    sha256 = "sha256-HxT2Yzx2KS7QJE1EdkMcWqGwUmjS53lSQ54+IZ+kD/8=";
+    hash = "sha256-GM4Ho6d4FpLqbaLWTui8ZXKs6offh4Sibj/Wqn2Ze/0=";
   };
-  nimline = fetchFromGitHub {
+  minline = fetchFromGitHub {
     owner = "h3rald";
-    repo = "nimline";
-    rev = "73012b2d9fc7809a4f48a9733c929d0a969a9c8b";
-    sha256 = "sha256-DwXMh9z4JJMCdBHAJk1JtUNjabrAzfT+D3WBd/GVeB4=";
+    repo = "minline";
+    rev = "e9197ce86354f8e157949cd433c2535e6cf8ae96";
+    hash = "sha256-opwMRyTEeQp5wtHfYr518vFyiJTltQh7aNZvvxugrHo=";
   };
   niftylogger = fetchurl {
-    url = "https://raw.githubusercontent.com/h3rald/nifty/master/src/niftypkg/niftylogger.nim";
-    sha256 = "sha256-cBbIB35OhJ5uKJo8oQATNtBesos9SiKiP3eZEF1Glp4=";
+    url = "https://raw.githubusercontent.com/h3rald/nifty/f2d24457b17a4bc16c91657103d61ded2e502bea/src/niftypkg/niftylogger.nim";
+    hash = "sha256-Olg7nBNJQ4oNmx8cmb36TjKP5CntqvGVuKiiSVWd7hE=";
   };
   src-dir = mergeDirs {
     name = "source";
@@ -52,8 +52,8 @@
         dst = "src/";
       }
       {
-        src = nimline;
-        dst = "src/minpkg/packages/nimline/";
+        src = minline;
+        dst = "src/minpkg/packages/minline/";
       }
       {
         src = niftylogger;
@@ -67,7 +67,7 @@
   };
   pkg = nimPackages.buildNimPackage rec {
     pname = "min";
-    version = "0.37.0";
+    inherit version;
 
     src = "${src-dir}/src";
 
@@ -78,7 +78,7 @@
 in
   runCommandLocal "min" {
     pname = "min";
-    version = "0.37.0";
+    inherit version;
 
     meta = with lib; {
       license = licenses.mit;
@@ -88,6 +88,7 @@ in
       in
         intersectLists archs os;
       maintainers = import ../maintainers.nix;
+      broken = true;
     };
   } ''
     mkdir -p $out/bin

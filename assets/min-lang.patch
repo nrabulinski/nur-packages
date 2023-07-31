@@ -9,7 +9,7 @@ index 52f861e..6a4bcc2 100644
 -version       = pkgVersion
 -author        = pkgAuthor
 -description   = pkgDescription
-+version       = "0.37.0"
++version       = "0.39.0"
 +author        = "h3rald"
 +description   = ""
  license       = "MIT"

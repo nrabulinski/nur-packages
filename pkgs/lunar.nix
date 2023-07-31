@@ -6,14 +6,31 @@
 }:
 stdenvNoCC.mkDerivation rec {
   pname = "lunar";
-  version = "6.1.3";
+  version = "6.2.2";
 
   src = fetchurl {
     url = "https://github.com/alin23/Lunar/releases/download/v${version}/Lunar-${version}.dmg";
-    sha256 = "sha256-ysQIlnLVYs5f1yq2tbmrVdVEd5wTYhUDmbe8OSqa/wI=";
+    hash = "sha256-pi9hif3N0FeC6NjFBWSnwkKxFUxJ39wWS1nyGKmv/mU=";
   };
 
-  nativeBuildInputs = [undmg];
+  # Lunar now uses APFS dmg which undmg does not support
+  unpackCmd = ''
+    if ! [[ "$curSrc" =~ \.dmg$ ]]; then return 1; fi
+
+    mnt=$(mktemp -d -t dmg-XXXXXXXXXX)
+
+    function finish {
+      /usr/bin/hdiutil detach $mnt -force
+      rm -rf $mnt
+    }
+    trap finish EXIT
+    /usr/bin/hdiutil attach -nobrowse -readonly $src -mountpoint $mnt
+    ls -lah $mnt/
+    ls -lah $mnt/*.app/
+    cp -R $mnt/*.app ./
+    trap - EXIT
+    finish
+  '';
 
   sourceRoot = ".";
   installPhase = ''

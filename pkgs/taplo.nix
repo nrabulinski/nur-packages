@@ -11,13 +11,13 @@ rustPlatform.buildRustPackage rec {
   version = "0.8.0";
 
   src = fetchFromGitHub {
-    owner = "nrabulinski";
+    owner = "tamasfe";
     repo = "taplo";
-    rev = "da44fa68b6c8883b51a0e497c67c0575785740c7";
-    sha256 = "sha256-OS5ww5VCuAflyt1aFe5uklcqoWq6fbqXWW5jmI+t28s=";
+    rev = "55c393ec1fb84eed54933d512a4342ae54056d5a";
+    hash = "sha256-kcHZaeX4NCjFTiqI0vF2gxYhU0SSa06q3swMA17/VWQ=";
   };
 
-  cargoSha256 = "sha256-GzUcq4JzbxrkQUyA+NjetSpWmNX2dzlS1XZqn01gkEs=";
+  cargoHash = "sha256-rlxOwK9CfvZmaRd2dWJlwIwQwBEi9RdxMqXn4Xvfs0M=";
 
   buildInputs = lib.optional stdenv.isDarwin darwin.apple_sdk.frameworks.Security;
 
