@@ -5,11 +5,11 @@
 }:
 stdenvNoCC.mkDerivation rec {
   pname = "playcover";
-  version = "3.0.0-beta.1";
+  version = "3.0.0";
 
   src = fetchurl {
     url = "https://github.com/PlayCover/PlayCover/releases/download/${version}/PlayCover_${version}.dmg";
-    sha256 = "sha256-D3xA0mVPmnDlKQH8TekQcZCQvY/7e5/dHKofDy3Idig=";
+    sha256 = "sha256-wl3u7b5IBtTFxIbgXnaW40ecEpSnxR8LrxcV7VM3HiY=";
   };
 
   # PlayCover now uses APFS dmg which undmg does not support

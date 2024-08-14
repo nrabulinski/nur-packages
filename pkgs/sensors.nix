@@ -6,11 +6,11 @@
 }:
 stdenvNoCC.mkDerivation rec {
   pname = "sensors";
-  version = "1.2.0";
+  version = "1.2.2";
 
   src = fetchurl {
-    url = "https://github.com/macmade/Sensors/releases/download/1.0.1/Sensors.app.zip";
-    sha256 = "sha256-AJBBNdj8/oOiUf6BE0zUcJTmUz4dPBqBr1GKt+mDlh0=";
+    url = "https://github.com/macmade/Sensors/releases/download/${version}/Sensors.zip";
+    sha256 = "sha256-6AqhHzL/LD82KKGPkCS0AastuqBewsQM/lFyBpo+W0w=";
   };
 
   nativeBuildInputs = [unzip];

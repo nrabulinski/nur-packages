@@ -3,14 +3,16 @@
   undmg,
   fetchurl,
   stdenvNoCC,
-}:
-stdenvNoCC.mkDerivation rec {
+}: let
+  systemSuffix = if stdenvNoCC.isAarch64 then "arm64" else "x86_64";
+in stdenvNoCC.mkDerivation rec {
   pname = "qutebrowser";
-  version = "2.5.3";
+  version = "3.2.1";
 
   src = fetchurl {
-    url = "https://github.com/qutebrowser/qutebrowser/releases/download/v${version}/qutebrowser-${version}.dmg";
-    hash = "sha256-T3DMZhIuXxI1tDCEi7knu6lscGCVSjU1UW76SaKd1N4=";
+    url = "https://github.com/qutebrowser/qutebrowser/releases/download/v${version}/qutebrowser-${version}-${systemSuffix}.dmg";
+    # TODO: Both x86 and arm hash
+    hash = "sha256-HNEXLXy1rgHiD97JyOEuBuZAeGjge1wvHgo9esZZKCY=";
   };
 
   nativeBuildInputs = [undmg];

@@ -6,11 +6,11 @@
 }:
 stdenvNoCC.mkDerivation rec {
   pname = "transmission";
-  version = "4.0.3";
+  version = "4.0.6";
 
   src = fetchurl {
     url = "https://github.com/transmission/transmission/releases/download/${version}/Transmission-${version}.dmg";
-    sha256 = "sha256-AceAbtpjqUEW2PimooDR0oS1qXXxKnNPjBJtb7VnGxk=";
+    sha256 = "sha256-5phX8VLgwvU4TMYDWGw9/ywwyT5nQmM0anAoY+cnfBo=";
   };
 
   nativeBuildInputs = [undmg];

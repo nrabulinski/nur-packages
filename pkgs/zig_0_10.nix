@@ -20,7 +20,7 @@
     aarch64-darwin = "02f7a7839b6a1e127eeae22ea72c87603fb7298c58bc35822a951479d53c7557";
   };
 in
-  stdenv.mkDerivation rec {
+  stdenv.mkDerivation {
     pname = "zig";
     version = "0.10.0";
 

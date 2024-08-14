@@ -6,13 +6,13 @@
 }:
 stdenvNoCC.mkDerivation rec {
   pname = "intel-one-mono";
-  version = "1.2.1";
+  version = "1.4.0";
 
   nativeBuildInputs = [unzip];
 
   src = fetchurl {
     url = "https://github.com/intel/intel-one-mono/releases/download/V${version}/otf.zip";
-    sha256 = "sha256-VnXIaW77dRXvXB1Vr01xRQDMECltwzF/RMqGgAWnu5M=";
+    sha256 = "sha256-dO+O5mdAPHYHRbwS/F4ssWhFRBlPrT1TQJGcFzqCJ/w=";
   };
 
   sourceRoot = ".";

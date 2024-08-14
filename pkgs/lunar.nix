@@ -1,16 +1,15 @@
 {
   lib,
-  undmg,
   fetchurl,
   stdenvNoCC,
 }:
 stdenvNoCC.mkDerivation rec {
   pname = "lunar";
-  version = "6.2.2";
+  version = "6.8.1";
 
   src = fetchurl {
     url = "https://github.com/alin23/Lunar/releases/download/v${version}/Lunar-${version}.dmg";
-    hash = "sha256-pi9hif3N0FeC6NjFBWSnwkKxFUxJ39wWS1nyGKmv/mU=";
+    hash = "sha256-FnQoaRF3mMuEJO5+4cIMzXmGQwalM/g/5ZQJu0aA4C4=";
   };
 
   # Lunar now uses APFS dmg which undmg does not support
